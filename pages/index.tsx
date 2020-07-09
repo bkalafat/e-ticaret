@@ -62,6 +62,13 @@ Index.getInitialProps = async () => {
       { id: "nextjs_dragonscale", name: "İnci Kolye", price: 400, image: "../static/inci-kolye.jpeg", description: "Özel tasarım inci kolye ile farklı görüneceksiniz." } as IProduct,
       { id: "nextjs_crowntail", name: "Taş Kolye", price: 350, image: "../static/tas-kolye.jpeg", description: "Zerafetinizi bu taş kolye ile taçlandırın." } as IProduct,
       { id: "nextjs_veiltail", name: "Tuğra Kolye", price: 400, image: "../static/tugra-kolye.jpeg", description: "Tuğra kolye ile güzelliğiniz ön plana çıksın." } as IProduct,
+      { id: "nextjs_1", name: "Kolye", price: 400, image: "../static/1.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct,
+      { id: "nextjs_2", name: "Kolye", price: 400, image: "../static/2.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct,
+      { id: "nextjs_3", name: "Kolye", price: 400, image: "../static/3.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct,
+      { id: "nextjs_4", name: "Kolye", price: 400, image: "../static/4.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct,
+      { id: "nextjs_5", name: "Kolye", price: 400, image: "../static/5.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct,
+      { id: "nextjs_6", name: "Kolye", price: 400, image: "../static/6.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct,
+      { id: "nextjs_7", name: "Kolye", price: 400, image: "../static/7.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct
     ]
   }
 }
