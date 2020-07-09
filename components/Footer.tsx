@@ -2,9 +2,9 @@ export default function Footer(){
   return (
     <footer className="footer">
       <p>
-        Next.js app with a&nbsp;<a href="https://snipcart.com">Snipcart</a>&nbsp;- powered store 
+        e-Ticaret &nbsp;<a href="https://github.com/bkalafat">bkalafat</a>&nbsp;
         <div className="footer__left">
-          <a href="https://github.com/snipcart/snipcart-nextjs">Github</a>
+          <a href="https://github.com/bkalafat">Github</a>
         </div>
       </p>
     </footer>

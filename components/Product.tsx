@@ -4,7 +4,7 @@ export interface IProduct {
   id: string
   name: string
   price: number
-  url: string  
+  url: string
   description: string
   image: string
 }
@@ -21,15 +21,15 @@ const Product = (props: IProductProps) => {
       <p className="product__description">{props.product.description}</p>
       <img src={props.product.image} alt="" className="product__image"/>
       <div className="product__price-button-container">
-        <div className="product__price">${props.product.price.toFixed(2)}</div>
-        <button 
-          className="snipcart-add-item product__button"
+        <div className="product__price">₺{props.product.price.toFixed(2)}</div>
+        <button
+          className="product__button"
           data-item-id={props.product.id}
           data-item-name={props.product.name}
           data-item-price={props.product.price}
           data-item-url={props.router.pathname}
           data-item-image={props.product.image}>
-          Add to cart
+          Sepete Ekle
         </button>
       </div>
     </div>
