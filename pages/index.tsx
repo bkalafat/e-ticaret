@@ -19,29 +19,25 @@ const Index = (props: IIndexProps) => {
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="/static/favicon.ico" />
+        <title>Glory Jewellery tasarım kolye takı kuyumculuk.</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Glory Jewellery takı kolye özel tasarım."
+        />
+        <meta name="title" content="Kolye takı gloryjewellerys.com" />
+        <script async src='https://www.googletagmanager.com/gtag/js?id=G-MB7Z4ZXDQQ'></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)}
+            gtag('js', new Date());
 
-              <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
-
-              <script>
-                var firebaseConfig = {
-                  apiKey: "AIzaSyBQrO7hG0Z0__tKNayLcBLkc7w7P-lBPTc",
-                  authDomain: "gloryjewellerys.firebaseapp.com",
-                  databaseURL: "https://gloryjewellerys.firebaseio.com",
-                  projectId: "gloryjewellerys",
-                  storageBucket: "gloryjewellerys.appspot.com",
-                  messagingSenderId: "470679224327",
-                  appId: "1:470679224327:web:353e0af22afda8e4b4eaa2",
-                  measurementId: "G-MB7Z4ZXDQQ"
-                };
-                firebase.initializeApp(firebaseConfig);
-                firebase.analytics();
-              </script>`
-          }}
-        />
+            gtag('config', 'G-MB7Z4ZXDQQ');
+              `
+          }}>
+        </script>
       </Head>
       <Header />
       <main className="main">
