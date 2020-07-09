@@ -7,7 +7,7 @@ export default function Header() {
         <img src="/static/logo.png" alt="" className="header__logo" />
       </Link>
       <Link href="/">
-        <h1 className="header__title">Glory Jewellerys</h1>
+        <h1 className="header__title">Glory Jewellery</h1>
       </Link>
 
     </header>
