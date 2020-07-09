@@ -4,9 +4,6 @@ import { IProduct } from "../components/Product"
 import Footer from "../components/Footer"
 import Contact from "../components/Contact"
 import Head from "next/head"
-import Document, { Html, Main, NextScript } from "next/document"
-
-import "../styles.scss"
 
 interface IIndexProps {
   products: IProduct[]
