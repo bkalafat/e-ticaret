@@ -68,6 +68,12 @@ html, body {
     margin-left: 10px;
   }
 
+  &__from-price {
+    color: $color-rolex-brown;
+    text-decoration: line-through;
+    margin-left: 10px;
+  }
+
   &__logo {
     height: 38px;
   }
@@ -178,6 +184,14 @@ html, body {
   &__price {
     grid-area: price;
     font-size: 28px;
+    font-weight: bold;
+  }
+  &__from-price {
+    grid-area: from-price;
+    padding-right: 8px;
+    text-decoration: line-through;
+    font-size: 28px;
+    color:$color-rolex-brown;
     font-weight: bold;
   }
 
