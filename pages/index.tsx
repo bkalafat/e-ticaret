@@ -14,7 +14,6 @@ const Index = (props: IIndexProps) => {
     <div className="app">
       <Head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="/static/favicon.ico" />
         <title>Glory Jewellery tasarım kolye takı kuyumculuk.</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

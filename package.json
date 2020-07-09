@@ -1,7 +1,7 @@
 {
-  "name": "snipcart-nextjs",
+  "name": "gloryjewellery",
   "version": "1.0.0",
-  "description": "snipcart-nextjs",
+  "description": "gloryjewellery",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/snipcart/snipcart-nextjs.git"
+    "url": "git+https://github.com/bkalafat/e-ticaret.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/snipcart/snipcart-nextjs/issues"
+    "url": "https://github.com/bkalafat/e-ticaret/issues"
   },
-  "homepage": "https://github.com/snipcart/snipcart-nextjs#readme",
+  "homepage": "https://github.com/bkalafat/e-ticaret#readme",
   "dependencies": {
     "@types/next": "^9.0.0",
     "@types/react": "^16.9.41",
