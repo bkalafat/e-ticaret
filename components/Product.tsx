@@ -22,8 +22,7 @@ const Product = (props: IProductProps) => {
     let re = /\ /gi;
     let result = text.replace(re, "%20");
 
-
-    console.log("https://api.whatsapp.com/send?phone=905323969261&text=" + result + "&source=&data=&app_absent=")
+    window.location.href = "https://api.whatsapp.com/send?phone=905323969261&text=" + result + "&source=&data=&app_absent="
   }
 
   return (
