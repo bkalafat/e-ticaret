@@ -54,17 +54,10 @@ const Index = (props: IIndexProps) => {
 Index.getInitialProps = async () => {
   return {
     products: [
-      { id: "nextjs_halfmoon", name: "İnci Altın Kolye", price: 500, image: "../static/inci-altin-kolye.jpeg", description: "Bu inci ve altın kolye ile kendinizi şımartın." } as IProduct,
-      { id: "nextjs_dragonscale", name: "İnci Kolye", price: 400, image: "../static/inci-kolye.jpeg", description: "Özel tasarım inci kolye ile farklı görüneceksiniz." } as IProduct,
-      { id: "nextjs_crowntail", name: "Taş Kolye", price: 350, image: "../static/tas-kolye.jpeg", description: "Zerafetinizi bu taş kolye ile taçlandırın." } as IProduct,
-      { id: "nextjs_veiltail", name: "Tuğra Kolye", price: 400, image: "../static/tugra-kolye.jpeg", description: "Tuğra kolye ile güzelliğiniz ön plana çıksın." } as IProduct,
-      { id: "nextjs_1", name: "Kolye", price: 400, image: "../static/1.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct,
-      { id: "nextjs_2", name: "Kolye", price: 400, image: "../static/2.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct,
-      { id: "nextjs_3", name: "Kolye", price: 400, image: "../static/3.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct,
-      { id: "nextjs_4", name: "Kolye", price: 400, image: "../static/4.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct,
-      { id: "nextjs_5", name: "Kolye", price: 400, image: "../static/5.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct,
-      { id: "nextjs_6", name: "Kolye", price: 400, image: "../static/6.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct,
-      { id: "nextjs_7", name: "Kolye", price: 400, image: "../static/7.jpeg", description: "En güzel kolyeler için Bize Ulaşın." } as IProduct
+      { id: "nextjs_1", name: "Grace", price: 249, image: "../static/1.jpeg", description: "Barok İnci Kolye" } as IProduct,
+      { id: "nextjs_2", name: "Ahenk", fromPrice: 160, price: 149, image: "../static/2.jpeg", description: "Kuvars Detaylı İnci Kolye" } as IProduct,
+      { id: "nextjs_3", name: "Mihrap", fromPrice: 200, price: 179, image: "../static/3.jpeg", description: "Ametist Kolye, Barok İnci Detaylı" } as IProduct,
+      { id: "nextjs_4", name: "Leon", fromPrice: 130, price: 119, image: "../static/4.jpeg", description: "Lapis Lazuli Ve Hematit Kolye" } as IProduct,
     ]
   }
 }
