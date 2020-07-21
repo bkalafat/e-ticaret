@@ -1,4 +1,5 @@
 import { withRouter, Router } from 'next/router'
+import Link from 'next/link'
 
 export interface IProduct {
   id: string

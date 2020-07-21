@@ -4,6 +4,7 @@ import { IProduct } from "../components/Product"
 import Footer from "../components/Footer"
 import Contact from "../components/Contact"
 import Head from "next/head"
+import * as API from "../utils/api"
 
 interface IIndexProps {
   products: IProduct[]
@@ -59,13 +60,11 @@ const Index = (props: IIndexProps) => {
 }
 
 Index.getInitialProps = async () => {
+
+  const res = await API.getJewelleryList()
+  const jewelleryList = await res.json()
   return {
-    products: [
-      { id: "nextjs_1", name: "Grace", price: 249, image: "../static/1.jpeg", description: "Barok İnci Kolye" } as IProduct,
-      { id: "nextjs_2", name: "Ahenk", fromPrice: 160, price: 149, image: "../static/2.jpeg", description: "Kuvars Detaylı İnci Kolye" } as IProduct,
-      { id: "nextjs_3", name: "Mihrap", fromPrice: 200, price: 179, image: "../static/3.jpeg", description: "Ametist Kolye, Barok İnci Detaylı" } as IProduct,
-      { id: "nextjs_4", name: "Leon", fromPrice: 130, price: 119, image: "../static/4.jpeg", description: "Lapis Lazuli Ve Hematit Kolye" } as IProduct,
-    ]
+    products: jewelleryList
   }
 }
 

@@ -26,9 +26,14 @@
     "@types/react-dom": "^16.9.8",
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "mongodb": "^3.5.9",
     "next": "^9.4.4",
+    "next-connect": "^0.8.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.2.2",
+    "react-bootstrap-table-next": "^4.0.3",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
