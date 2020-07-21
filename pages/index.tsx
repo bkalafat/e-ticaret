@@ -6,7 +6,7 @@ import Contact from "../components/Contact"
 import Head from "next/head"
 import * as API from "../utils/api"
 
-interface IIndexProps {
+export interface IIndexProps {
   products: IProduct[]
 }
 

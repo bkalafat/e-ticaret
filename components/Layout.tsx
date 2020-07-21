@@ -2,7 +2,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 
 function Layout({ children }) {
-  return <div>
+  return <div className="app">
     <Header />
     {children}
     <Footer />

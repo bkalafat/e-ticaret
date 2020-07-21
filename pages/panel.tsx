@@ -1,19 +1,9 @@
 import Layout from "../components/Layout"
 import BootstrapTable from "react-bootstrap-table-next"
-import { useState, useEffect } from "react"
 import * as API from "../utils/api"
+import { IIndexProps } from "./index"
 
-const Panel = () => {
-  const [jewelleryList, setJewelleryList] = useState([])
-
-  useEffect(() => {
-    API.getJewelleryList().then(result => {
-      console.log(result)
-    })
-  },[])
-
-
-
+const Panel = (props: IIndexProps) => {
   const navigateForCreate = () => console.log("navigate to detail")
   // history.push({
   //   pathname: "/NewsEditor"
@@ -36,12 +26,12 @@ const Panel = () => {
     },
     {
       dataField: "fromPrice",
-      text: "Başık",
+      text: "Ücret",
       sort: true
     },
     {
       dataField: "price",
-      text: "Tip"
+      text: "İndirimli Ücret"
     },
     {
       dataField: "description",
@@ -56,19 +46,19 @@ const Panel = () => {
       navigateForUpdate(row)
     }
   }
-  if (jewelleryList) {
+  if (props.products) {
     return (
       <Layout>
         <div className="center-item">
           <input
             onClick={navigateForCreate}
             type="submit"
-            value="Yeni Haber Ekle"
+            value="Ekle"
           />
           <BootstrapTable
             bootstrap4
             keyField="id"
-            data={jewelleryList}
+            data={props.products}
             columns={columns}
             rowEvents={rowEvents}
             striped
@@ -80,4 +70,14 @@ const Panel = () => {
   }
 }
 
+Panel.getInitialProps = async () => {
+
+  const res = await API.getJewelleryList()
+  const jewelleryList = await res.json()
+  return {
+    products: jewelleryList
+  }
+}
+
 export default Panel
+
