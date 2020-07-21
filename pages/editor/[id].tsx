@@ -23,7 +23,7 @@ const Editor = () => {
 
   return (
     <Layout>
-      <div>
+      <div className="center-item">
         <div className="center">
           <Button
             variant={selectedFile ? "info" : "primary"}

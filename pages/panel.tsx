@@ -2,14 +2,13 @@ import Layout from "../components/Layout"
 import BootstrapTable from "react-bootstrap-table-next"
 import * as API from "../utils/api"
 import { IIndexProps } from "./index"
+import Router from 'next/router'
+import jewellery from "./api/jewellery"
 
 const Panel = (props: IIndexProps) => {
-  const navigateForCreate = () => console.log("navigate to detail")
-  // history.push({
-  //   pathname: "/NewsEditor"
-  // })
+  const navigateForCreate = () => Router.push('/editor/0')
 
-  const navigateForUpdate = news => console.log("navigate to detail")
+  const navigateForUpdate = jewellery => Router.push('/editor/' + jewellery.id)
 
   // history.push({
   //   pathname: "/NewsEditor",
@@ -38,9 +37,6 @@ const Panel = (props: IIndexProps) => {
       text: "Açıklama"
     }
   ]
-
-
-
   const rowEvents = {
     onClick: (e, row) => {
       navigateForUpdate(row)
