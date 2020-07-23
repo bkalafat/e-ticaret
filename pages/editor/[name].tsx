@@ -1,24 +1,33 @@
 import { Form, Button } from "react-bootstrap"
 import Layout from "../../components/Layout"
-import { useState, useEffect, useRef } from "react"
+import { useState, useRef } from "react"
 import { useRouter } from 'next/router'
+import * as API from '../../utils/api'
+import Router from 'next/router'
 
-const Editor = () => {
+const Editor = (props) => {
 
   const fileInput = useRef(null)
   const [selectedFile, setSelectedFile] = useState(null)
   const router = useRouter()
-  const { id } = router.query
-  const isUpdate = id != '0';
-  const [jewellery, setJewellery] = useState({ id: "nextjs_2", name: "Ahenk", fromPrice: 160, price: 149, image: "../static/2.jpeg", description: "Kuvars Detaylı İnci Kolye" })
+  const { name } = router.query
+  const isUpdate = name != 'new';
+  const [jewellery, setJewellery] = useState(props.product ? props.product : null)
 
   const fileSelectorHandler = event => {
     setSelectedFile(event.target.files[0])
   }
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault()
-    console.log("Submitted")
+    await API.upsertJewellery(jewellery)
+    API.uploadFile(selectedFile)
+      .then(res => {
+        console.log(res)
+        debugger
+        setJewellery({ ...jewellery, image: res.data.fileUrl })
+        Router.push('/panel')
+      })
   }
 
   return (
@@ -41,7 +50,7 @@ const Editor = () => {
           onChange={fileSelectorHandler}
         />
 
-        <div className="centerFlex">
+        <div>
           <Form onSubmit={handleSubmit} className="col-md-10 col-xl-10">
             <Form.Group>
               <Form.Label>Adı</Form.Label>
@@ -59,16 +68,24 @@ const Editor = () => {
                 as="textarea"
               />
             </Form.Group>
-
-
-            <Button variant="primary" type="submit">
+            <Form.Group>
+              <Form.Label>Ücret</Form.Label>
+              <Form.Control
+                value={jewellery.fromPrice}
+                onChange={e => setJewellery({ ...jewellery, fromPrice: Number.parseInt(e.target.value) })}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>İndirimli Ücret</Form.Label>
+              <Form.Control
+                value={jewellery.price}
+                onChange={e => setJewellery({ ...jewellery, price: Number.parseInt(e.target.value) })}
+              />
+            </Form.Group>
+            <Button style={{ marginRight: 7 }} variant="primary" type="submit">
               {isUpdate ? "Güncelle" : "Ekle"}
             </Button>
-
-            <Button variant="warning" onClick={() => console.log("/AdminPanel e yönlendir")}>
-              Geri
-          </Button>
-
+            <Button style={{ marginRight: 7 }} variant="warning" onClick={() => Router.push('/panel')}>Geri</Button>
             {isUpdate && (
               <Button
                 variant="danger"
@@ -87,4 +104,14 @@ const Editor = () => {
     </Layout>)
 }
 
+Editor.getInitialProps = async ({ query: { name } }) => {
+  const res = await API.getJewellery(name)
+  const jewellery = await res.json()
+  return {
+    product: jewellery
+  }
+}
+
 export default Editor
+
+

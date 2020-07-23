@@ -3,19 +3,8 @@ import BootstrapTable from "react-bootstrap-table-next"
 import * as API from "../utils/api"
 import { IIndexProps } from "./index"
 import Router from 'next/router'
-import jewellery from "./api/jewellery"
 
 const Panel = (props: IIndexProps) => {
-  const navigateForCreate = () => Router.push('/editor/0')
-
-  const navigateForUpdate = jewellery => Router.push('/editor/' + jewellery.id)
-
-  // history.push({
-  //   pathname: "/NewsEditor",
-  //   state: { news: news }
-  // })
-
-  //{ id: "nextjs_2", name: "Ahenk", fromPrice: 160, price: 149, image: "../static/2.jpeg", description: "Kuvars Detaylı İnci Kolye" }
 
   const columns = [
     {
@@ -37,9 +26,10 @@ const Panel = (props: IIndexProps) => {
       text: "Açıklama"
     }
   ]
-  const rowEvents = {
-    onClick: (e, row) => {
-      navigateForUpdate(row)
+  const navigateForCreate = () => Router.push('/editor/new')
+  const navigateForUpdate = {
+    onClick: (_e, jewellery) => {
+      Router.push('/editor/' + jewellery.name)
     }
   }
   if (props.products) {
@@ -56,7 +46,7 @@ const Panel = (props: IIndexProps) => {
             keyField="id"
             data={props.products}
             columns={columns}
-            rowEvents={rowEvents}
+            rowEvents={navigateForUpdate}
             striped
             hover
             condensed
@@ -67,7 +57,6 @@ const Panel = (props: IIndexProps) => {
 }
 
 Panel.getInitialProps = async () => {
-
   const res = await API.getJewelleryList()
   const jewelleryList = await res.json()
   return {
@@ -76,4 +65,3 @@ Panel.getInitialProps = async () => {
 }
 
 export default Panel
-
