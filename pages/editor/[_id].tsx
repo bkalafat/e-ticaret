@@ -142,11 +142,27 @@ const Editor = (props) => {
     </Layout>)
 }
 
-Editor.getInitialProps = async ({ query: { _id } }) => {
-  const res = await API.getJewellery(_id)
+export async function getStaticPaths() {
+
+  const res = await API.getJewelleryList()
+  const jewelleryList = await res.json()
+
+  // Get the paths we want to pre-render based on posts
+  const paths = jewelleryList.map((jew) => ({
+    params: { _id: jew._id },
+  }))
+  paths.push({params: {_id:'new'}})
+
+  return { paths, fallback: false }
+}
+
+export const getStaticProps = async ({ params }) => {
+  const res = await API.getJewellery(params._id)
   const jewellery = await res.json()
   return {
-    product: jewellery
+    props: {
+      product: jewellery
+    }
   }
 }
 

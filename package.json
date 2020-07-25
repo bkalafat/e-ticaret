@@ -30,7 +30,7 @@
     "bootstrap": "^4.5.0",
     "isomorphic-unfetch": "^3.0.0",
     "mongodb": "^3.5.9",
-    "next": "^9.4.4",
+    "next": "^9.4.5-canary.43",
     "next-connect": "^0.8.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",

@@ -59,13 +59,15 @@ const Index = (props: IIndexProps) => {
   )
 }
 
-Index.getInitialProps = async () => {
-
+export const getStaticProps = async () => {
   const res = await API.getJewelleryList()
   const jewelleryList = await res.json()
   return {
-    products: jewelleryList
+    props: {
+      products: jewelleryList
+    }
   }
 }
+
 
 export default Index
