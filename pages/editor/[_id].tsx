@@ -3,31 +3,69 @@ import Layout from "../../components/Layout"
 import { useState, useRef } from "react"
 import { useRouter } from 'next/router'
 import * as API from '../../utils/api'
+import * as CONST from '../../utils/constant'
 import Router from 'next/router'
+import { useEffect } from 'react'
+import Resizer from "react-image-file-resizer"
 
 const Editor = (props) => {
 
   const fileInput = useRef(null)
   const [selectedFile, setSelectedFile] = useState(null)
+  const [isSubmitting, setSubmitting] = useState(false)
   const router = useRouter()
-  const { name } = router.query
-  const isUpdate = name != 'new';
-  const [jewellery, setJewellery] = useState(props.product ? props.product : null)
+  const { _id } = router.query
+  const isUpdate = _id != 'new';
+  const [jewellery, setJewellery] = useState(isUpdate ? props.product : CONST.DEFAULT_JEWELLERY)
 
   const fileSelectorHandler = event => {
     setSelectedFile(event.target.files[0])
   }
 
-  const handleSubmit = async event => {
-    event.preventDefault()
-    await API.upsertJewellery(jewellery)
-    API.uploadFile(selectedFile)
+  function urlToFile(url, filename, mimeType) {
+    return fetch(url)
       .then(res => {
-        console.log(res)
-        debugger
+        return res.arrayBuffer()
+      })
+      .then(buf => {
+        return new File([buf], filename, { type: mimeType })
+      })
+      .then(file => {
+        return API.uploadFile(file)
+      })
+      .then(res => {
         setJewellery({ ...jewellery, image: res.data.fileUrl })
+        setSubmitting(true)
+      })
+  }
+
+  useEffect(() => {
+    if (isSubmitting) {
+      API.upsertJewellery(jewellery).then(() => {
         Router.push('/panel')
       })
+      setSubmitting(false)
+    }
+  }, [isSubmitting])
+
+  const handleSubmit = async event => {
+    event.preventDefault()
+    if (selectedFile) {
+      Resizer.imageFileResizer(
+        selectedFile,
+        800,
+        555,
+        "JPEG",
+        100,
+        0,
+        uri => {
+          urlToFile(uri, selectedFile.name, "image/jpeg").then(() => { })
+        },
+        "base64"
+      )
+    } else if (isUpdate) {
+      setSubmitting(true)
+    }
   }
 
   return (
@@ -90,9 +128,9 @@ const Editor = (props) => {
               <Button
                 variant="danger"
                 onClick={() =>
-                  //API.deleteNews(jewellery.id).then(function (res) {
-                  console.log("Silinecek")
-                  //})
+                  API.deleteJewellery(jewellery._id).then(function (res) {
+                    Router.push('/panel')
+                  })
                 }
               >
                 Sil
@@ -104,8 +142,8 @@ const Editor = (props) => {
     </Layout>)
 }
 
-Editor.getInitialProps = async ({ query: { name } }) => {
-  const res = await API.getJewellery(name)
+Editor.getInitialProps = async ({ query: { _id } }) => {
+  const res = await API.getJewellery(_id)
   const jewellery = await res.json()
   return {
     product: jewellery

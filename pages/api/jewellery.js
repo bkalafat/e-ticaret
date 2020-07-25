@@ -6,10 +6,10 @@ const handler = nextConnect();
 handler.use(middleware);
 
 handler.get(async (req, res) => {
-    const { name } = req.query;
-    if (name) {
-        const jewellery = await req.db.collection('Jewellery').findOne({ name: name });
-        const empty = { id: "", name: "", fromPrice: 0, price: 0, image: "", description: "" }
+    const { _id } = req.query;
+    if (_id) {
+        const jewellery = await req.db.collection('Jewellery').findOne({ _id: _id });
+        const empty = { _id: "", name: "", fromPrice: 0, price: 0, image: "", description: "" }
 
         if (jewellery)
             res.json(jewellery)
@@ -24,7 +24,15 @@ handler.get(async (req, res) => {
 handler.post(async (req, res) => {
     let jewellery = req.body
     jewellery = JSON.parse(jewellery);
-    await req.db.collection('Jewellery').updateOne({ id: jewellery._id }, { $set: jewellery }, { upsert: true })
+    await req.db.collection('Jewellery').updateOne({ _id: jewellery._id }, { $set: jewellery }, { upsert: true })
+    res.json({ message: 'ok' });
+})
+
+handler.delete(async (req, res) => {
+    const { _id } = req.query;
+    if (_id) {
+        await req.db.collection('Jewellery').deleteOne({ _id: _id })
+    }
     res.json({ message: 'ok' });
 })
 

@@ -36,7 +36,8 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.2.2",
     "react-bootstrap-table-next": "^4.0.3",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-image-file-resizer": "^0.3.1"
   },
   "devDependencies": {
     "@types/node": "^14.0.20",
