@@ -17,19 +17,19 @@ const Index = (props: IIndexProps) => {
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <link rel="shortcut icon" href="/static/favicon.ico" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <title>Glory Jewellery - Özel Tasarım Kolye</title>
-        <meta name="title" content="Glory Jewellery - Özel Tasarım Kolye" />
-        <meta name="description" content="Özel tasarım özenle seçilmiş metaryallerle tasarlanan kolyelerimizle kendinizi şımartın." />
+        <title>Glory Jewellery - Özel Tasarım Takı</title>
+        <meta name="title" content="Glory Jewellery - Özel Tasarım Takı" />
+        <meta name="description" content="Özel tasarım özenle seçilmiş metaryallerle tasarlanan takılarımızla kendinizi şımartın." />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gloryjewelleryy.com" />
-        <meta property="og:title" content="Glory Jewellery - Özel Tasarım Kolye" />
-        <meta property="og:description" content="Özel tasarım özenle seçilmiş metaryallerle tasarlanan kolyelerimizle kendinizi şımartın." />
+        <meta property="og:title" content="Glory Jewellery - Özel Tasarım Takı" />
+        <meta property="og:description" content="Özel tasarım özenle seçilmiş metaryallerle tasarlanan takılarımızla kendinizi şımartın." />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://gloryjewellery.com/" />
-        <meta property="twitter:title" content="Glory Jewellery - Özel Tasarım Kolye" />
-        <meta property="twitter:description" content="Özel tasarım özenle seçilmiş metaryallerle tasarlanan kolyelerimizle kendinizi şımartın." />
+        <meta property="twitter:title" content="Glory Jewellery - Özel Tasarım Takı" />
+        <meta property="twitter:description" content="Özel tasarım özenle seçilmiş metaryallerle tasarlanan takılarımızla kendinizi şımartın." />
         <script async src='https://www.googletagmanager.com/gtag/js?id=G-MB7Z4ZXDQQ'></script>
         <script
           dangerouslySetInnerHTML={{
