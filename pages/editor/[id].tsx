@@ -153,7 +153,7 @@ export async function getStaticPaths() {
   }))
   paths.push({params: {id:'new'}})
 
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 }
 
 export const getStaticProps = async ({ params }) => {
