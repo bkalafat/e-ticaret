@@ -41,7 +41,7 @@ const Editor = (props) => {
 
   useEffect(() => {
     if (isSubmitting) {
-      API.upsertJewellery(jewellery).then(() => {
+      API.upsertJewellery(jewellery, isUpdate).then(() => {
         Router.push('/panel')
       })
       setSubmitting(false)
@@ -151,16 +151,19 @@ export async function getStaticPaths() {
   const paths = jewelleryList.map((jew) => ({
     params: { id: jew.id },
   }))
-  paths.push({params: {id:'new'}})
+  paths.push({ params: { id: 'new' } })
 
   return { paths, fallback: true }
 }
 
 export const getStaticProps = async ({ params }) => {
-  const res = await API.getJewellery(params.id)
-  const jewellery = await res.json()
+  let jewellery = CONST.DEFAULT_JEWELLERY;
+  if (params.id != 'new') {
+    const res = await API.getJewellery(params.id)
+    jewellery = await res.json()
+  }
   return {
-    revalidate: 15,
+    revalidate: 1,
     props: {
       product: jewellery
     }
