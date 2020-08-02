@@ -63,6 +63,7 @@ export const getStaticProps = async () => {
   const res = await API.getJewelleryList()
   const jewelleryList = await res.json()
   return {
+    revalidate: 15,
     props: {
       products: jewelleryList
     }
