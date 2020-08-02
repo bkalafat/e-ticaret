@@ -16,7 +16,7 @@ const Editor = (props) => {
   const router = useRouter()
   const { id } = router.query
   const isUpdate = id != 'new';
-  const [jewellery, setJewellery] = useState(isUpdate ? props.product : CONST.DEFAULT_JEWELLERY)
+  const [jewellery, setJewellery] = useState(isUpdate ? props.jewellery ? props.jewellery : CONST.DEFAULT_JEWELLERY : CONST.DEFAULT_JEWELLERY)
 
   const fileSelectorHandler = event => {
     setSelectedFile(event.target.files[0])
@@ -165,11 +165,9 @@ export const getStaticProps = async ({ params }) => {
   return {
     revalidate: 1,
     props: {
-      product: jewellery
+      jewellery
     }
   }
 }
 
 export default Editor
-
-
