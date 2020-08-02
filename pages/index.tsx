@@ -45,7 +45,7 @@ const Index = (props: IIndexProps) => {
       </Head>
       <Header />
       <main className="main">
-        <img src="/static/background-jew.png" alt="a" className="background-image" />
+        <img src="/background-jew.png" alt="a" className="background-image" />
         <div className="promotional-message">
           <h3>GLORY</h3>
           <h2>Jewellery</h2>

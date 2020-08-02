@@ -5,7 +5,6 @@ interface IProductListProps {
 }
 
 const ProductList = (props: IProductListProps) => {
-  debugger
   return (
     <div className="product-list">
       {props.products.map((product, index) => <Product product={product} key={index}/>)}

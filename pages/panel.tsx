@@ -29,7 +29,7 @@ const Panel = (props: IIndexProps) => {
   const navigateForCreate = () => Router.push('/editor/new')
   const navigateForUpdate = {
     onClick: (_e, jewellery) => {
-      Router.push('/editor/' + jewellery._id)
+      Router.push('/editor/' + jewellery.id)
     }
   }
   if (props.products) {
@@ -43,7 +43,7 @@ const Panel = (props: IIndexProps) => {
           />
           <BootstrapTable
             bootstrap4
-            keyField="_id"
+            keyField="id"
             data={props.products}
             columns={columns}
             rowEvents={navigateForUpdate}

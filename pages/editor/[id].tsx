@@ -14,8 +14,8 @@ const Editor = (props) => {
   const [selectedFile, setSelectedFile] = useState(null)
   const [isSubmitting, setSubmitting] = useState(false)
   const router = useRouter()
-  const { _id } = router.query
-  const isUpdate = _id != 'new';
+  const { id } = router.query
+  const isUpdate = id != 'new';
   const [jewellery, setJewellery] = useState(isUpdate ? props.product : CONST.DEFAULT_JEWELLERY)
 
   const fileSelectorHandler = event => {
@@ -128,7 +128,7 @@ const Editor = (props) => {
               <Button
                 variant="danger"
                 onClick={() =>
-                  API.deleteJewellery(jewellery._id).then(function (res) {
+                  API.deleteJewellery(jewellery.id).then(function (res) {
                     Router.push('/panel')
                   })
                 }
@@ -149,15 +149,15 @@ export async function getStaticPaths() {
 
   // Get the paths we want to pre-render based on posts
   const paths = jewelleryList.map((jew) => ({
-    params: { _id: jew._id },
+    params: { id: jew.id },
   }))
-  paths.push({params: {_id:'new'}})
+  paths.push({params: {id:'new'}})
 
   return { paths, fallback: false }
 }
 
 export const getStaticProps = async ({ params }) => {
-  const res = await API.getJewellery(params._id)
+  const res = await API.getJewellery(params.id)
   const jewellery = await res.json()
   return {
     revalidate: 15,
