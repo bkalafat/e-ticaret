@@ -32,8 +32,8 @@ const Product = (props: IProductProps) => {
       <p className="product__description">{props.product.description}</p>
       <img src={props.product.image} alt="" className="product__image" />
       <div className="product__price-button-container">
-        {props.product.fromPrice && <div style={{visibility: "hidden"}} className="product__from-price">₺{props.product.fromPrice.toFixed(2)}</div>}
-        <div style={{visibility: "hidden"}} className="product__price">₺{(props.product.price).toFixed(2)}</div>
+        {props.product.fromPrice > 0 && <div className="product__from-price">₺{props.product.fromPrice.toFixed(2)}</div>}
+        {props.product.price > 0 && <div className="product__price">₺{(props.product.price).toFixed(2)}</div>}
         <button
           onClick={handleClick}
           className="product__button"
