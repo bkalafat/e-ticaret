@@ -21,7 +21,7 @@ const Index = (props: IIndexProps) => {
         <meta name="title" content="Glory Jewellery - Özel Tasarım Takı" />
         <meta name="description" content="Özel tasarım özenle seçilmiş metaryallerle tasarlanan takılarımızla kendinizi şımartın." />
         <meta property="og:image" content={props.products[0].image}/>
-        <meta property="og:url" content="https://gloryjewellery.com"/>
+        <meta property="og:url" content="https://gloryjewelleryy.com"/>
         <meta name="twitter:card" content="summary_large_image"/>
 
         <meta property="og:type" content="website" />
@@ -30,7 +30,7 @@ const Index = (props: IIndexProps) => {
         <meta property="og:description" content="Özel tasarım özenle seçilmiş metaryallerle tasarlanan takılarımızla kendinizi şımartın." />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://gloryjewellery.com/" />
+        <meta property="twitter:url" content="https://gloryjewelleryy.com/" />
         <meta property="twitter:title" content="Glory Jewellery - Özel Tasarım Takı" />
         <meta property="twitter:description" content="Özel tasarım özenle seçilmiş metaryallerle tasarlanan takılarımızla kendinizi şımartın." />
         <script async src='https://www.googletagmanager.com/gtag/js?id=G-MB7Z4ZXDQQ'></script>
