@@ -53,8 +53,8 @@ const Editor = (props) => {
     if (selectedFile) {
       Resizer.imageFileResizer(
         selectedFile,
-        800,
-        555,
+        2000,
+        1400,
         "JPEG",
         100,
         0,
