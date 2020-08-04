@@ -20,6 +20,9 @@ const Index = (props: IIndexProps) => {
         <title>Glory Jewellery - Özel Tasarım Takı</title>
         <meta name="title" content="Glory Jewellery - Özel Tasarım Takı" />
         <meta name="description" content="Özel tasarım özenle seçilmiş metaryallerle tasarlanan takılarımızla kendinizi şımartın." />
+        <meta property="og:image" content={props.products[0].image}/>
+        <meta property="og:url" content="https://gloryjewellery.com"/>
+        <meta name="twitter:card" content="summary_large_image"/>
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gloryjewelleryy.com" />

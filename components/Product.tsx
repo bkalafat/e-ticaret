@@ -30,7 +30,7 @@ const Product = (props: IProductProps) => {
     <div className="product">
       <h2 className="product__title">{props.product.name}</h2>
       <p className="product__description">{props.product.description}</p>
-      <img src={props.product.image} alt="" className="product__image" />
+      <img src={props.product.image} alt="product" className="product__image" />
       <div className="product__price-button-container">
         {props.product.fromPrice > 0 && <div className="product__from-price">₺{props.product.fromPrice.toFixed(2)}</div>}
         {props.product.price > 0 && <div className="product__price">₺{(props.product.price).toFixed(2)}</div>}
