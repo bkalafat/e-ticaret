@@ -15,7 +15,7 @@ const Index = (props: IIndexProps) => {
     <div className="app">
       <Head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <link rel="shortcut icon" href="/static/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <title>Glory Jewellery - Özel Tasarım Takı</title>
         <meta name="title" content="Glory Jewellery - Özel Tasarım Takı" />
