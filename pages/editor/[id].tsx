@@ -163,7 +163,7 @@ export const getStaticProps = async ({ params }) => {
     jewellery = await res.json()
   }
   return {
-    revalidate: 1,
+    revalidate: 36000,
     props: {
       jewellery
     }
